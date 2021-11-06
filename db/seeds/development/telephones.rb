@@ -1,4 +1,5 @@
-%w(佐藤 太郎 高橋 花子 田中 太郎).each do |name|
+name = ["佐藤 太郎", "高橋 花子", "田中 太郎"]
+name.each do |name|
   friend = Friend.find_by(full_name: name)
   cell = [false, true, false, true]
   0.upto(9) do |idx|

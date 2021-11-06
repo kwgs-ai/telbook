@@ -1,0 +1,10 @@
+<%=@member %>
+<% if @telephones.present? %>
+  <% @telephones.each do |entry| %>
+    <h2><%= entry.number %></h2>
+  <% end %>
+
+<% else %>
+  <p>記事がありません。</p>
+
+<% end %>

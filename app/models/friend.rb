@@ -1,3 +1,3 @@
 class Friend < ApplicationRecord
-  has_many :telephone, dependent: :destroy
+  has_many :telephones, dependent: :destroy
 end
