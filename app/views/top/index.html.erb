@@ -1,7 +1,29 @@
 
-  <h2>見出し</h2>
+  <h2>Friend一覧</h2>
   <p>
     ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
-    <%= link_to "もっと読む", "#" %>
   </p>
+  <% if @friends.present? %>
+    <table class="list">
+      <thead>
+      <tr>
+        <th>ユーザー名</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td style="text-align: right"><%= friend.id %></td>
+<!--          <td><%#= link_to friend.name, member %></td>-->
+          <td><%= friend.full_name %></td>
+          <td>
+
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>会員情報がありません。</p>
+  <% end %>
 
