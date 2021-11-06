@@ -21,8 +21,9 @@
   <p>記事がありません。</p>
 
 <% end %>
-<%= form_tag :new_friend, method: :get, class: "add" do %>
+<%= form_tag :new_telephone, method: :get, class: "add" do %>
   <%= text_field_tag "q", params[:q] %>
+  <%= hidden_field_tag 'cell', false %>
   <%= check_box_tag "cell",true%>
   <%= submit_tag "add"%>
 <% end %>
