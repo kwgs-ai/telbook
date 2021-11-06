@@ -1,14 +1,18 @@
 class TelephonesController < ApplicationController
   def index
-    @member = Friend.find(3)
-      @telephones= @member.telephones
-    
   end
 
   def show
   end
 
   def new
+    @telphone = Telephone.new(number: params[:q], cellphone: params[:cell])
+    @telphone.author = @friend
+    if @telphone.seve
+      redirect_to @friend
+    else
+      render "show"
+    end
   end
 
   def edit

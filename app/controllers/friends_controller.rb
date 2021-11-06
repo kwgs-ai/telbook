@@ -4,7 +4,7 @@ class FriendsController < ApplicationController
   end
   def show
     @friend = Friend.find(params[:id])
-    # @telephones = @friend.telephone
+    @telephones = @friend.telephones
 
   end
   def new
@@ -37,6 +37,12 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     @friend.destroy
     redirect_to :friends, notice: "会員を削除しました。"
+  end
+  def add
+    @telephone = Telephone.new()
+  end
+  def delete
+
   end
 
 end

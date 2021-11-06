@@ -7,7 +7,7 @@ name.each do |name|
     author: friend,
     # cellphone: cell[idx % 4],
     #  number: "070-#{rand(110..999)}-#{rand(1980..9000)}"
-    cellphone: true,
+    cellphone: cell[idx % 4],
     number: "070-#{rand(110..999)}-#{rand(1980..9000)}"
   )
   end
