@@ -9,7 +9,8 @@ class FriendsController < ApplicationController
     @friend = Friend.new()
   end
   def edit
-
+    @friend = Friend.find(params[:id])
+    render "new"
   end
   def create
     @friend = Friend.new(params[:friend])
@@ -21,6 +22,13 @@ class FriendsController < ApplicationController
 
   end
   def update
+    @friend = Friend.find(params[:id])
+    @friend.assign_attributes(params[:friend])
+    if @friend.save
+      redirect_to :friends, notice: "会員情報を更新しました。"
+    else
+      render "new"
+    end
 
   end
   def destroy
