@@ -14,7 +14,7 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(params[:friend])
     if @friend.save
-      redirect_to :root
+      redirect_to :friends, notice: "会員を追加しました。"
     else
       render "new"
     end
@@ -24,6 +24,8 @@ class FriendsController < ApplicationController
 
   end
   def destroy
-
+    @member = Friend.find(params[:id])
+    @member.destroy
+    redirect_to :friends, notice: "会員を削除しました。"
   end
 end
