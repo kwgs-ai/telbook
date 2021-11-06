@@ -32,8 +32,9 @@ class FriendsController < ApplicationController
 
   end
   def destroy
-    @member = Friend.find(params[:id])
-    @member.destroy
+    @friend = Friend.find(params[:id])
+    @friend.destroy
     redirect_to :friends, notice: "会員を削除しました。"
   end
+
 end
