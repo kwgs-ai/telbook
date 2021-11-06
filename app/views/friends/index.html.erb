@@ -3,6 +3,7 @@
   <p>
     ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
   </p>
+<!--  <div class="toolbar"><%#= link_to "会員の新規登録", :new_member %></div>-->
   <% if @friends.present? %>
     <table class="list">
       <thead>
@@ -17,7 +18,7 @@
           <td style="text-align: right"><%= friend.id %></td>
 <!--          <td><%#= link_to friend.name, member %></td>-->
           <td><%= friend.full_name %></td>
-          
+
         </tr>
       <% end %>
       </tbody>
