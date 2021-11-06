@@ -14,7 +14,7 @@ class TelephonesController < ApplicationController
     if @telephone.save
       redirect_to @friend, notice: "追加しました"
     else
-      render "friends/show"
+      redirect_to @friend, notice: "失敗しました"
     end
   end
   def destroy
