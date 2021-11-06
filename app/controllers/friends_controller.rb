@@ -1,12 +1,12 @@
 class FriendsController < ApplicationController
   def index
     @friends = Friend.all
-                     .page(params[:page]).per(15)
+                     .page(params[:page]).per(10)
   end
   def show
     @friend = Friend.find(params[:id])
     @telephones = @friend.telephones
-
+                    .page(params[:page]).per(5)
   end
   def new
     @friend = Friend.new()

@@ -13,13 +13,15 @@
      <h2>自宅</h2>
 
     <% end %>
+
   <% end %>
+  <%= paginate @telephones %>
 
 <% else %>
   <p>記事がありません。</p>
 
 <% end %>
-<%= form_tag :create_telephone, method: :get, class: "add" do %>
+<%= form_tag :new_friend, method: :get, class: "add" do %>
   <%= text_field_tag "q", params[:q] %>
   <%= check_box_tag "cell",true%>
   <%= submit_tag "add"%>
