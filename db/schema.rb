@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_055326) do
+ActiveRecord::Schema.define(version: 2021_11_06_083929) do
 
   create_table "friends", force: :cascade do |t|
     t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "telephones", force: :cascade do |t|
+    t.integer "friend_id", null: false
+    t.string "number", null: false
+    t.boolean "cellphone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_telephones_on_friend_id"
   end
 
 end
