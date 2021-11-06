@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
   def index
     @friends = Friend.all
+                     .page(params[:page]).per(15)
   end
   def show
     @friend = Friend.find(params[:id])
