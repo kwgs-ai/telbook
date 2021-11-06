@@ -6,12 +6,18 @@ class FriendsController < ApplicationController
 
   end
   def new
-
+    @friend = Friend.new()
   end
   def edit
 
   end
-  def ceate
+  def create
+    @friend = Friend.new(params[:friend])
+    if @friend.save
+      redirect_to :root
+    else
+      render "new"
+    end
 
   end
   def update

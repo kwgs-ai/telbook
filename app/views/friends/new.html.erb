@@ -1,0 +1,8 @@
+<% @page_title = "新規作成・編集" %>
+
+<h1><%= @page_title %></h1>
+
+<%= form_for @friend do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit :save %></div>
+<% end %>

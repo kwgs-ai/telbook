@@ -3,13 +3,14 @@
   <p>
     ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。
   </p>
-<!--  <div class="toolbar"><%#= link_to "会員の新規登録", :new_member %></div>-->
+  <div class="toolbar"><%= link_to "会員の新規登録", :new_friend %></div>
   <% if @friends.present? %>
     <table class="list">
       <thead>
       <tr>
         <th>番号</th>
         <th>ユーザー名</th>
+        <th>操作</th>
       </tr>
       </thead>
       <tbody>
@@ -18,7 +19,11 @@
           <td style="text-align: right"><%= friend.id %></td>
 <!--          <td><%#= link_to friend.name, member %></td>-->
           <td><%= friend.full_name %></td>
-
+          <td>
+            <%= link_to "編集", [:edit, friend] %> |
+            <%= link_to "削除", friend, method: :delete,
+                        data: { confirm: "本当に削除しますか?" } %>
+          </td>
         </tr>
       <% end %>
       </tbody>
