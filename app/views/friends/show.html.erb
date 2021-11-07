@@ -33,7 +33,7 @@
 <% end %>
 
 
-<%= form_tag :new_telephone, method: :get, class: "add" do %>
+<%= form_tag({:controller => 'telephones', :action => 'create'}) do %>
   <%= text_field_tag "q", params[:q] %>
   <%= hidden_field_tag 'cell', false %>
   <%= check_box_tag "cell",true%>

@@ -1,6 +1,6 @@
 class TelephonesController < ApplicationController
-  def index
-  end
+  # def index
+  # end
 
   def show
 
@@ -8,15 +8,8 @@ class TelephonesController < ApplicationController
 
   def new
     @friend = Friend.find(session[:friend_id])
-    @telephone = Telephone.new(number: params[:q], cellphone: params[:cell])
-    @telephone.author = current_member
-
-    if @telephone.save
-      redirect_to @friend, notice: "追加しました"
-    else
-
-      redirect_to @friend, flash: {error: @telephone.errors.full_messages}
-    end
+    @telephone = Telephone.new()
+    redirect_to @friend
   end
   def destroy
     @friend = Friend.find(session[:friend_id])
@@ -27,6 +20,16 @@ class TelephonesController < ApplicationController
   def edit
   end
   def create
+    @a = 1
+    @friend = Friend.find(session[:friend_id])
+    @telephone = Telephone.new(number: params[:q], cellphone: params[:cell])
+    @telephone.author = current_member
 
+    if @telephone.save
+      redirect_to @friend, notice: "電話番号を追加しました"
+    else
+
+      redirect_to @friend, flash: {error: @telephone.errors.full_messages}
+    end
   end
 end
