@@ -20,9 +20,11 @@ class TelephonesController < ApplicationController
   def edit
   end
   def create
-    @a = 1
+    # @telephone = Telephone.new(number: params[:q], cellphone: params[:cell])
+    @aa = params[:telephone]
+    # render "index"
+    @telephone = Telephone.new(params[:telephone])
     @friend = Friend.find(session[:friend_id])
-    @telephone = Telephone.new(number: params[:q], cellphone: params[:cell])
     @telephone.author = current_member
 
     if @telephone.save

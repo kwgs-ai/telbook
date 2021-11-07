@@ -7,7 +7,7 @@
     <% end %>
   </ul>
 <% end %>
-
+<h1><%=@aa %></h1>
 <% @page_title = "会員の詳細" %>
 <h1><%= @page_title %></h1>
 <h2><%= @friend.full_name %></h2>
@@ -32,10 +32,15 @@
 
 <% end %>
 
+<%= form_for @telephone do |form| %>
 
-<%= form_tag({:controller => 'telephones', :action => 'create'}) do %>
-  <%= text_field_tag "q", params[:q] %>
-  <%= hidden_field_tag 'cell', false %>
-  <%= check_box_tag "cell",true%>
-  <%= submit_tag "add"%>
+  <table class="attr">
+    <tr>
+      <th><%= form.label :number, "電話番号" %></th>
+      <td><%= form.text_field :number %></td>
+      <td><%=form.check_box :cellphone,{ },"true","false"%></td>
+    </tr>
+  </table>
+
+  <div><%= form.submit :save %></div>
 <% end %>
