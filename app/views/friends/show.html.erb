@@ -1,7 +1,17 @@
+
+<% if flash[:error].present? %>
+  <P>エラーがあります</P>
+  <ul class="errors">
+    <% flash[:error].each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <% @page_title = "会員の詳細" %>
-<h1><%= @telephone %></h1>
 <h1><%= @page_title %></h1>
 <h2><%= @friend.full_name %></h2>
+
 
 <% if @telephones.present? %>
   <% @telephones.each do |tel| %>
@@ -21,6 +31,8 @@
   <p>記事がありません。</p>
 
 <% end %>
+
+
 <%= form_tag :new_telephone, method: :get, class: "add" do %>
   <%= text_field_tag "q", params[:q] %>
   <%= hidden_field_tag 'cell', false %>

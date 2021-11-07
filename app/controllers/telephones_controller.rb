@@ -14,7 +14,8 @@ class TelephonesController < ApplicationController
     if @telephone.save
       redirect_to @friend, notice: "追加しました"
     else
-      redirect_to @friend, notice: "失敗しました"
+
+      redirect_to @friend, flash: {error: @telephone.errors.full_messages}
     end
   end
   def destroy

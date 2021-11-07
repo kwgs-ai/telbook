@@ -4,10 +4,11 @@ class FriendsController < ApplicationController
                      .page(params[:page]).per(10)
   end
   def show
+    @telephone = Telephone.new()
     @friend = Friend.find(params[:id])
     session[:friend_id] = params[:id]
     @telephones = @friend.telephones
-                    .page(params[:page]).per(5)
+                          .page(params[:page]).per(5)
   end
   def new
     @friend = Friend.new()
