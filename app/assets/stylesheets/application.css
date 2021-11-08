@@ -17,7 +17,6 @@
 /* ページ全体 */
 body {
   background-color: floralwhite;
-
   margin: 0; padding: 0;
 
 }
@@ -141,7 +140,7 @@ nav.menubar span {
 
 /* メインコンテンツ */
 main h1 {
-  color: #88c;
+  color: #212123;
   font-weight: normal;
   font-size: 150%;
   border-bottom: 2px solid #88c;
@@ -149,11 +148,12 @@ main h1 {
 }
 
 main h2 {
-  color: #99d;
+  color: #131211;
   font-weight: bold;
   font-size: 120%;
   margin-bottom: 0.5em;
   border-bottom: 1px solid #ccf;
+  font-family: Serif;
 }
 
 main p {
@@ -223,41 +223,17 @@ html {
     box-sizing: border-box;
 }
 
-.btn,
-a.btn,
-button.btn {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.5;
-    position: relative;
-    display: inline-block;
-    padding: 1rem 4rem;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    color: #212529;
-    border-radius: 0.5rem;
-
-}
 .hoge{
     width: 100px;
     box-sizing: border-box;
     border: 1px solid #68779a;
-    color: black;
-    background-color: #fcd798;
+    color: white;
+    background-color: #ef8b49;
     display:inline-block
 }
 .hoge:hover{
-    color: black;
-    background: #d5eedb;
+    color: white;
+    background: #ecc4aa;
 }
 .button{
 
@@ -266,17 +242,21 @@ div.area{
     text-align:end;
 
 }
+div.show{
+    text-align:end;
 
-.hoge1{
+}
+.teledele{
     width: 100px;
     box-sizing: border-box;
     border: 1px solid #68779a;
-    color: black;
-    background-color: #c0eccb;
+    color: white;
+    background-color: #f5a46c;
+    display:inline-block
 }
-.hoge1:hover{
-    color: black;
-    background: #d5eedb;
+.teledele:hover{
+    color: white;
+    background: #acd1f8;
 }
 ol {
     padding: 0;
@@ -304,3 +284,30 @@ ol li {
 /*    line-height: 1.5;*/
 /*    padding: 0.5em 0;*/
 /*}*/
+ul {
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    list-style-type: none!important;/*ポチ消す*/
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    background: #f8e9db;
+    vertical-align: middle;
+    color: #505050;
+    border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
+}
+
+ul li:before{
+    display:inline-block;
+    vertical-align: middle;
+    /*以下白丸つくる*/
+    content:'';
+    width:1em;
+    height: 1em;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 8px;
+}

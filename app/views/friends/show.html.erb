@@ -14,19 +14,21 @@
 
 
 <% if @telephones.present? %>
+  <ul>
   <% @telephones.each do |tel| %>
-    <h2><%= tel.number %>
-      <%= link_to  "削除", telephone_path(tel.id,friend: @friend_id), method: :delete,
-                                       data: { confirm: "本当に削除しますか?" }  %></h2>
-
+    <li>
+      <%= tel.number %>
     <% if tel.cellphone %>
-      <h2>携帯</h2>
-    <% else %>
-     <h2>自宅</h2>
+      携帯
+     <% end %>
+      <div class="show">
+      <%= button_to "削除", telephone_path(tel.id,friend: @friend_id),{method: :delete,class: "teledele", data: { confirm: "本当に削除しますか?" }}  %>
+      </div>
+    </li>
 
-    <% end %>
 
   <% end %>
+  </ul>
   <%= paginate @telephones %>
 
 <% else %>
