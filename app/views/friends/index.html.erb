@@ -1,5 +1,6 @@
+<% @page_title = "Telbook" %>
 
-  <h2>Friend一覧</h2>
+<h2>Friend一覧</h2>
 
   <div class="toolbar"><%= link_to "会員の新規登録", :new_friend %></div>
   <% if @friends.present? %>
@@ -17,8 +18,9 @@
           <td style="text-align: right"><%= friend.id %></td>
           <td><%= link_to friend.full_name, friend %></td>
           <td>
-            <%= button_to "編集", [:edit, friend],{method: :get} %>
-            <%= button_to "削除", friend,{method: :delete, data: { confirm: "本当に削除しますか?" }}%>
+            <%= button_to "編集", [:edit, friend],{method: :get,class: "hoge" } %>
+            <%= button_to "削除", friend,{method: :delete,class: "hoge", data: { confirm: "本当に削除しますか?" }}  %>
+
           </td>
         </tr>
       <% end %>

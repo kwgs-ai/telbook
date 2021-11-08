@@ -7,15 +7,18 @@ class TelephonesController < ApplicationController
   end
 
   def new
-    @friend = Friend.find(session[:friend_id])
-    @telephone = Telephone.new()
-    redirect_to @friend
+    # @friend = Friend.find(session[:friend_id])
+    # @telephone = Telephone.new()
+    # redirect_to @friend
   end
   def destroy
-    @friend = Friend.find(session[:friend_id])
-    @telephone = current_member.telephones.find(params[:id])
+    # @friend = params[:friend]
+    # render "index"
+    @friend = Friend.find(params[:friend])
+    # @friend = Friend.find(session[:friend_id])
+    @telephone = @friend.telephones.find(params[:id])
     @telephone.destroy
-    redirect_to @friend, notice: "TELを削除しました。"
+    redirect_to @friend, notice: "TEL削除しました"
   end
   def edit
   end

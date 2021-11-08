@@ -74,7 +74,7 @@ aside#sidebar {
 
 /* ヘッダー */
 header {
-  border-top: 4px solid #6bb;
+  border-bottom: 5px solid #171111;
   padding-top: 4px;
 }
 
@@ -241,4 +241,27 @@ button.btn {
     color: #212529;
     border-radius: 0.5rem;
 
+}
+.hoge{
+    width: 100px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    color: black;
+    background-color: #c0eccb;
+}
+.hoge:hover{
+    color: black;
+    background: #d5eedb;
+}
+
+.hoge1{
+    width: 100px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    color: black;
+    background-color: #c0eccb;
+}
+.hoge1:hover{
+    color: black;
+    background: #d5eedb;
 }

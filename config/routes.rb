@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root "friends#index"
-  resources :friends do
-
-  end
+  resources :friends
   resources :telephones
 end

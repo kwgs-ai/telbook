@@ -1,8 +1,5 @@
 <%= render "shared/errors", obj: @friend%>
+    <%= form.label :full_name, "氏名" %>
+    <%= form.text_field :full_name %>
+<h3></h3>
 
-<table class="attr">
-  <tr>
-    <th><%= form.label :full_name, "氏名" %></th>
-    <td><%= form.text_field :full_name %></td>
-  </tr>
-</table>

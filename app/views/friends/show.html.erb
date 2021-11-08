@@ -7,7 +7,7 @@
     <% end %>
   </ul>
 <% end %>
-<h1><%=@aa %></h1>
+<h1><%= @aa %></h1> 
 <% @page_title = "会員の詳細" %>
 <h1><%= @page_title %></h1>
 <h2><%= @friend.full_name %></h2>
@@ -15,8 +15,12 @@
 
 <% if @telephones.present? %>
   <% @telephones.each do |tel| %>
-    <h2><%= tel.number %><%= link_to "削除", tel, method: :delete,
-                                       data: { confirm: "本当に削除しますか?" } %></h2>
+    <h2><%= tel.number %><%= link_to  "削除", telephone_path(tel.id,friend: @friend_id), method: :delete,
+                                       data: { confirm: "本当に削除しますか?" }  %></h2>
+
+
+
+
     <% if tel.cellphone %>
       <h2>携帯</h2>
     <% else %>
@@ -39,10 +43,11 @@
       <th><%= form.label :number, "電話番号" %></th>
       <td><%= form.text_field :number %></td>
       <td><%=form.check_box :cellphone,{ },"true","false"%></td>
-<!--      　<%#= form.hidden_field :author, {value: @friend_id} %>-->
       <%= hidden_field_tag :author, @friend_id %>
     </tr>
   </table>
 
   <div><%= form.submit :save %></div>
 <% end %>
+
+<%= menu_link_to "TOP", :root %>

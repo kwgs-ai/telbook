@@ -4,5 +4,7 @@
 
 <%= form_for @friend do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit :save %></div>
+  <div><%= form.submit :save,{class: "hoge1"} %></div>
 <% end %>
+
+<%= menu_link_to "TOP", :root %>
