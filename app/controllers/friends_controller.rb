@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
   def index
     @friends = Friend.all
-                     .page(params[:page]).per(10)
+                     .page(params[:page]).per(5)
   end
   def show
     @telephone = Telephone.new()

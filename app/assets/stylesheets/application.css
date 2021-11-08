@@ -17,7 +17,7 @@
 /* ページ全体 */
 body {
   background-color: floralwhite;
-font-family: 'Caveat', cursive;
+
   margin: 0; padding: 0;
 
 }
@@ -76,6 +76,7 @@ aside#sidebar {
 /* ヘッダー */
 header {
     color: white;
+    font-family: 'Caveat', cursive;
   border-bottom: 5px solid #171111;
   padding-top: 4px;
     background-color: #addede;
@@ -251,11 +252,19 @@ button.btn {
     box-sizing: border-box;
     border: 1px solid #68779a;
     color: black;
-    background-color: #c0eccb;
+    background-color: #fcd798;
+    display:inline-block
 }
 .hoge:hover{
     color: black;
     background: #d5eedb;
+}
+.button{
+
+}
+div.area{
+    text-align:end;
+
 }
 
 .hoge1{
@@ -269,3 +278,29 @@ button.btn {
     color: black;
     background: #d5eedb;
 }
+ol {
+    padding: 0;
+    position: relative;
+}
+
+ol li {
+    border-left: solid 6px #f39254;/*左側の線*/
+    background: #fdf0e7;/*背景色*/
+    margin-bottom: 3px;/*下のバーとの余白*/
+    line-height: 1.5;
+    padding: 0.5em;
+    list-style-type: none!important;/*ポチ消す*/
+}
+
+/*ul{*/
+/*    background-color: #ebebf8;*/
+/*    color: #1e366a;*/
+/*    border: dotted #1e366a 1px;!*ドット 色 太さ*!*/
+/*    padding: 0.5em 0.5em 0.5em 2em;*/
+/*}*/
+
+/*li{*/
+
+/*    line-height: 1.5;*/
+/*    padding: 0.5em 0;*/
+/*}*/
