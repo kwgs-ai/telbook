@@ -39,6 +39,8 @@
       <th><%= form.label :number, "電話番号" %></th>
       <td><%= form.text_field :number %></td>
       <td><%=form.check_box :cellphone,{ },"true","false"%></td>
+<!--      　<%#= form.hidden_field :author, {value: @friend_id} %>-->
+      <%= hidden_field_tag :author, @friend_id %>
     </tr>
   </table>
 

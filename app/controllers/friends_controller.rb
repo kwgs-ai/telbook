@@ -6,6 +6,7 @@ class FriendsController < ApplicationController
   def show
     @telephone = Telephone.new()
     @friend = Friend.find(params[:id])
+    @friend_id = params[:id]
     session[:friend_id] = params[:id]
     @telephones = @friend.telephones
                           .page(params[:page]).per(5)
@@ -20,6 +21,7 @@ class FriendsController < ApplicationController
   end
   def create
     @friend = Friend.new(params[:friend])
+
     if @friend.save
       redirect_to :friends, notice: "会員を追加しました。"
     else
