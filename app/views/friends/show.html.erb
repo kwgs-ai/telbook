@@ -15,11 +15,9 @@
 
 <% if @telephones.present? %>
   <% @telephones.each do |tel| %>
-    <h2><%= tel.number %><%= link_to  "削除", telephone_path(tel.id,friend: @friend_id), method: :delete,
+    <h2><%= tel.number %>
+      <%= link_to  "削除", telephone_path(tel.id,friend: @friend_id), method: :delete,
                                        data: { confirm: "本当に削除しますか?" }  %></h2>
-
-
-
 
     <% if tel.cellphone %>
       <h2>携帯</h2>

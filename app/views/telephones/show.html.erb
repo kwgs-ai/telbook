@@ -1,2 +1,24 @@
-<h1><%= @aa %></h1>
-<p>Find me in app/views/telephones/show.html.erb</p>
+<table class="attr">
+  <tr>
+    <th>ユーザー名</th>
+    <td><%= @friend.name %></td>
+    <th>電話番号</th>
+    <td>
+      <% if @telephones.present? %>
+        <% @telephones.each do |tele| %>
+          <%= tele.number %>
+          <% if tele.cellphone %>
+            <p>携帯</p>
+          <% else %>
+            <p>自宅</p>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>電話番号はありません</p>
+      <% end %>
+    </td>
+
+  </tr>
+</table>
+
+<%= link_to "TOP", :root %>

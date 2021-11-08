@@ -1,12 +1,11 @@
-name = ["平岡 公威", "安倍 公房", "泉 鏡花","福永 武彦"]
 1.upto(19) do |idx|
   friend = Friend.find(idx)
-  cell = [false, true, false, true]
+  cell = [false, true]
   0.upto(9) do |idx|
   Telephone.create(
     author: friend,
-    cellphone: cell[idx % 4],
-    number: "070-#{rand(110..999)}-#{rand(1980..9000)}"
+    number: "070-#{rand(0000..9999)}-#{rand(0000..9000)}",
+    cellphone: cell[idx % 2]
   )
   end
 end

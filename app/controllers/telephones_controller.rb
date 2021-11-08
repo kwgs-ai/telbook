@@ -7,9 +7,7 @@ class TelephonesController < ApplicationController
   end
 
   def new
-    # @friend = Friend.find(session[:friend_id])
-    # @telephone = Telephone.new()
-    # redirect_to @friend
+
   end
   def destroy
     @friend = Friend.find(params[:friend])
