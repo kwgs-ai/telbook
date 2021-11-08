@@ -12,10 +12,7 @@ class TelephonesController < ApplicationController
     # redirect_to @friend
   end
   def destroy
-    # @friend = params[:friend]
-    # render "index"
     @friend = Friend.find(params[:friend])
-    # @friend = Friend.find(session[:friend_id])
     @telephone = @friend.telephones.find(params[:id])
     @telephone.destroy
     redirect_to @friend, notice: "TEL削除しました"

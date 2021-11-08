@@ -1,6 +1,6 @@
 name = ["平岡 公威", "安倍 公房", "泉 鏡花","福永 武彦"]
-name.each do |name|
-  friend = Friend.find_by(full_name: name)
+1.upto(19) do |idx|
+  friend = Friend.find(idx)
   cell = [false, true, false, true]
   0.upto(9) do |idx|
   Telephone.create(
