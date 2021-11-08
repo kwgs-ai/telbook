@@ -17,9 +17,9 @@
 /* ページ全体 */
 body {
   background-color: floralwhite;
-  color: black;
+font-family: 'Caveat', cursive;
   margin: 0; padding: 0;
-  font-family: Meiryo, sans-serif;
+
 }
 
 /* リンク */
@@ -67,15 +67,19 @@ main {
 aside#sidebar {
   float: left;
   width: 230px;
-  background-color: #e8ffff;
+    height: 1000px;
+  background-color: #f6eedc;
   padding: 5px;
   font-size: 86%;
 }
 
 /* ヘッダー */
 header {
+    color: white;
   border-bottom: 5px solid #171111;
   padding-top: 4px;
+    background-color: #addede;
+    background-image: url("171030ell_DSC1941_TP_V4.jpg");
 }
 
 ul.account-menu {
