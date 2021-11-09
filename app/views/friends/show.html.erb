@@ -18,8 +18,8 @@
           <%= image_tag "cell.png", size: "20x40", alt: "telephone" %>
         <% end %>
         <div class="show">
-          <%= button_to "削除", telephone_path(tel.id, friend: @friend_id), { method: :delete, class: "teledele", data: { confirm: "本当に削除しますか?" } } %>
         </div>
+        <%= button_to "削除", telephone_path(tel.id, friend: @friend_id), { method: :delete, class: "teledele", data: { confirm: "本当に削除しますか?" } } %>
       </li>
     <% end %>
   </ul>
@@ -36,7 +36,7 @@
     <tr>
       <th><%= form.label :number, "電話番号" %></th>
       <td><%= form.text_field :number %></td>
-      <td><%= form.check_box :cellphone, {}, "true", "false" %></td>
+      <td>携帯電話<%= form.check_box :cellphone, {}, "true", "false" %></td>
       <%= hidden_field_tag :author, @friend_id %>
     </tr>
   </table>

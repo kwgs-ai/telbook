@@ -1,2 +1,24 @@
-<h1><%= @aa %></h1>
-<p>Find me in app/views/telephones/show.html.erb</p>
+<table class="attr">
+  <tr>
+    <th>ユーザー名</th>
+    <td><%= @friend.name %></td>
+    <th>電話番号</th>
+    <td>
+      <% if @numbers.present? %>
+        <% @numbers.each do |num| %>
+          <p><%= num.number %>
+            <% if num.cellphone %>
+              📱</p>
+            <% end %>
+            <%= button_to "削除", num, method: :delete,
+                          data: { confirm: "本当に削除しますか?" } %>
+        <% end %>
+      <% else %>
+        <p>電話番号はありません</p>
+      <% end %>
+    </td>
+
+  </tr>
+</table>
+
+<%= link_to "TOP", :root %>
