@@ -16,9 +16,13 @@
 
 /* ページ全体 */
 body {
+    font-size: large;
   background-color: floralwhite;
   margin: 0; padding: 0;
-
+    background-image: url("PKbokeIMGP04951674_TP_V.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* リンク */
@@ -67,7 +71,7 @@ aside#sidebar {
   float: left;
   width: 230px;
     height: 1000px;
-  background-color: #f6eedc;
+  background-color: #faf1e9;
   padding: 5px;
   font-size: 86%;
 }
@@ -78,7 +82,6 @@ header {
     font-family: 'Caveat', cursive;
   border-bottom: 5px solid #171111;
   padding-top: 4px;
-    background-color: #addede;
     background-image: url("171030ell_DSC1941_TP_V4.jpg");
 }
 
@@ -143,16 +146,16 @@ main h1 {
   color: #212123;
   font-weight: normal;
   font-size: 150%;
-  border-bottom: 2px solid #88c;
+  border-bottom: 5px solid #c288cc;
   margin-bottom: 0.5em;
 }
 
 main h2 {
   color: #131211;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 130%;
   margin-bottom: 0.5em;
-  border-bottom: 1px solid #ccf;
+  border-bottom: 5px solid #ccf;
   font-family: Serif;
 }
 
@@ -264,8 +267,9 @@ ol {
 }
 
 ol li {
-    border-left: solid 6px #f39254;/*左側の線*/
-    background: #fdf0e7;/*背景色*/
+    font-size: large;
+    border-left: solid 6px #fa3807;/*左側の線*/
+    background: #f6eef5;/*背景色*/
     margin-bottom: 3px;/*下のバーとの余白*/
     line-height: 1.5;
     padding: 0.5em;
@@ -289,12 +293,13 @@ ul {
 }
 
 ul li {
+    font-size: large;
     position: relative;
     list-style-type: none!important;/*ポチ消す*/
     padding: 0.5em 0.5em 0.5em 0.5em;
     margin-bottom: 5px;
     line-height: 1.5;
-    background: #f8e9db;
+    background: #fadecb;
     vertical-align: middle;
     color: #505050;
     border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
@@ -310,4 +315,52 @@ ul li:before{
     background: #fff;
     border-radius: 50%;
     margin-right: 8px;
+}
+input[type="submit"] {
+    width: 20%;
+    font-size: 15px;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 0px;
+    text-align: center;
+    background-color: #e7ad80;
+    border: 1px solid #5c87a6;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+/*--hover--*/
+input[type="submit"]:hover {
+    color: #e7ad80;
+    background-color: #ffffff;
+    border: 1px solid #5c87a6;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+input[type="submit"].sub {
+    width: 20%;
+    font-size: 15px;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 0px;
+    text-align: center;
+    background-color: #e78089;
+    border: 1px solid #5c87a6;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+/*--hover--*/
+input[type="submit"]:hover.sub {
+    color: #e7808f;
+    background-color: #ffffff;
+    border: 1px solid #5c87a6;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1s;
 }
