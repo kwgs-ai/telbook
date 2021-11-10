@@ -1,26 +1,23 @@
 <% @page_title = "Telbook" %>
 
-<h2>Friend一覧</h2>
+<h2>友達一覧</h2>
 
-  <div class="toolbar"><%= link_to "会員の新規登録", :new_friend %></div>
+  <div class="toolbar"><%= link_to "友達の新規登録", :new_friend,class: "link" %></div>
   <% if @friends.present? %>
-<!--    <table class="list">-->
-      <thead>
-<!--      <tr>-->
-<!--        <th>番号</th>-->
-<!--        <th>ユーザー名</th>-->
-<!--        <th>操作</th>-->
-<!--      </tr>-->
-      </thead>
+
       <tbody>
 
       <% @friends.each do |friend| %>
         <ol>
-<!--          <ol style="text-align: right"><%#= friend.id %></ol>-->
-          <li><%= friend.id %><%= link_to friend.full_name, friend %>
-            <div class="area">
+          <li>
+            <div class="index">
+            <div>
+            <%= link_to friend.full_name, friend %>
+            </div>
+            <div class="conteiner">
             <%= button_to "編集", [:edit, friend],{method: :get,class: "hoge" } %>
             <%= button_to "削除", friend,{method: :delete,class: "hoge", data: { confirm: "本当に削除しますか?" }}  %>
+            </div>
             </div>
           </li>
         </ol>
@@ -30,6 +27,6 @@
 <!--    </table>-->
     <%= paginate @friends %>
   <% else %>
-    <p>会員情報がありません。</p>
+    <p>友達データがありません。</p>
   <% end %>
 

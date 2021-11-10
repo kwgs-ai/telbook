@@ -1,10 +1,22 @@
 <% @page_title = "新規作成・編集" %>
 
-<h1><%= @page_title %></h1>
-
+<h2><%= @page_title %></h2>
+<%= render "shared/errors", obj: @friend%>
+<!--<div class="new_msg">-->
+<!--<h3>制約</h3>-->
+<!--<p>２０文字以内で入力</p>-->
+<!--</div>-->
+<div class="name">
 <%= form_for @friend do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit :save,{class: "hoge1"} %></div>
+  <div class ="new">
+  <div class="name-field">
+    <%= form.label :full_name, "氏名" %>
+    <%= form.text_field :full_name,:placeholder => "山田　太郎"%>
+  </div>
+  <div class="new-save"> <%= form.submit :保存,{class: "hoge"} %></div>
+  </div>
 <% end %>
-
-<%= menu_link_to "TOP", :root %>
+</div>
+<div class="btn">
+<%= link_to "<<TOPに戻る", :root %>
+</div>

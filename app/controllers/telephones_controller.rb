@@ -13,7 +13,7 @@ class TelephonesController < ApplicationController
     @friend = Friend.find(params[:friend])
     @telephone = @friend.telephones.find(params[:id])
     @telephone.destroy
-    redirect_to @friend, notice: "TEL削除しました"
+    redirect_to @friend, notice: "電話番号削除しました"
   end
   def edit
   end

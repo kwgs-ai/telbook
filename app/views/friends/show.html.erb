@@ -1,47 +1,53 @@
 <% if flash[:error].present? %>
   <P>エラーがあります</P>
-  <ul class="errors">
-    <% flash[:error].each do |e| %>
-      <li><%= e %></li>
-    <% end %>
-  </ul>
+  <!--  <ul class="errors">-->
+  <% flash[:error].each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+  <!--  </ul>-->
 <% end %>
-<% @page_title = "会員の詳細" %>
-<h1><%= @page_title %></h1>
-<h2><%= @friend.full_name %></h2>
+<% @page_title = "友達の詳細" %>
+
+<div class="friend">
+<h2><%= @friend.full_name %>の友達の電話番号リスト</h2>
+</div>
 <% if @telephones.present? %>
-  <ul>
+  <ul class="list">
     <% @telephones.each do |tel| %>
-      <li>
+      <li class="list-item">
+        <span class="num">
         <%= tel.number %>
-        <% if tel.cellphone %>
-          <%= image_tag "cell.png", size: "20x40", alt: "telephone" %>
+          <% if tel.cellphone %>
+          <%= image_tag "cell.png", size: "20x30", alt: "telephone" %>
         <% end %>
-        <div class="show">
+        </span>
+
+        <div class="right">
+          <%= button_to "削除", telephone_path(tel.id, friend: @friend_id), { method: :delete, class: "hoge", data: { confirm: "本当に削除しますか?" } } %>
         </div>
-        <%= button_to "削除", telephone_path(tel.id, friend: @friend_id), { method: :delete, class: "teledele", data: { confirm: "本当に削除しますか?" } } %>
       </li>
     <% end %>
-  </ul>
-  <%= paginate @telephones %>
-
 <% else %>
-  <p>記事がありません。</p>
-
+  <p>電話番号データがありません。</p>
 <% end %>
+<div class="chkbox">
+  <%= form_for @telephone do |form| %>
+    <!--      <li><%#= form.label :number, "電話番号" %></li>-->
+    <li class="list-item">
+      <div class="left">
+      <%= form.text_field :number,:placeholder => "電話番号" %>
 
-<%= form_for @telephone do |form| %>
+      <%= form.check_box :cellphone, {}, "true", "false" %>
 
-  <table class="attr">
-    <tr>
-      <th><%= form.label :number, "電話番号" %></th>
-      <td><%= form.text_field :number %></td>
-      <td>携帯電話<%= form.check_box :cellphone, {}, "true", "false" %></td>
       <%= hidden_field_tag :author, @friend_id %>
-    </tr>
-  </table>
+      </div>
+      <div class="right">
+        <%= form.submit :追加, class: "hoge" %>
+      </div>
+    </li>
+  <% end %>
+</div>
+</ul>
+<%= paginate @telephones %>
 
-  <div><%= form.submit :save ,class: "sub" %></div>
-<% end %>
-
-<%= menu_link_to "TOP", :root %>
+<%= link_to "<< TOPに戻る", :root %>

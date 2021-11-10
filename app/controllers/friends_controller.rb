@@ -24,7 +24,7 @@ class FriendsController < ApplicationController
     @friend = Friend.new(params[:friend])
 
     if @friend.save
-      redirect_to :friends, notice: "会員を追加しました。"
+      redirect_to :friends, notice: "友達を追加しました。"
     else
       render "new"
     end
@@ -34,7 +34,7 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     @friend.assign_attributes(params[:friend])
     if @friend.save
-      redirect_to :friends, notice: "会員情報を更新しました。"
+      redirect_to :friends, notice: "友達情報を更新しました。"
     else
       render "new"
     end
@@ -43,7 +43,7 @@ class FriendsController < ApplicationController
   def destroy
     @friend = Friend.find(params[:id])
     @friend.destroy
-    redirect_to :friends, notice: "会員を削除しました。"
+    redirect_to :friends, notice: "友達を削除しました。"
   end
   def add
     @telephone = Telephone.new()
