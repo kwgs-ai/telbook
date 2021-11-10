@@ -1,17 +1,14 @@
 class FriendsController < ApplicationController
   def index
-    @friends = Friend.all
-                     .page(params[:page]).per(5)
+    @friends = Friend.all.page(params[:page]).per(5)
+
   end
   def show
     @telephone = Telephone.new()
     @friend = Friend.find(params[:id])
     @friend_id = params[:id]
-    @telephones = @friend.telephones
-                          .page(params[:page]).per(5)
-
-
-
+    @telephones = @friend.telephones.page(params[:page]).per(5)
+    @total = @telephones.per(5).total_pages
   end
   def new
     @friend = Friend.new()
@@ -22,9 +19,10 @@ class FriendsController < ApplicationController
   end
   def create
     @friend = Friend.new(params[:friend])
-
     if @friend.save
-      redirect_to :friends, notice: "友達を追加しました。"
+      @friends = Friend.all.page(params[:page]).per(5)
+      @total = @friends.per(5).total_pages
+      redirect_to friends_path(page: @total), notice: "友達を追加しました。"
     else
       render "new"
     end

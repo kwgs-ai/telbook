@@ -1,15 +1,21 @@
+
 <% if flash[:error].present? %>
-  <P>エラーがあります</P>
+  <div id="errors">
+  <h3>エラーがあります</h3>
   <!--  <ul class="errors">-->
+    <ul>
   <% flash[:error].each do |e| %>
-    <p><%= e %></p>
+    <li><%= e %></li>
   <% end %>
+    </ul>
+  </div>
   <!--  </ul>-->
 <% end %>
+
 <% @page_title = "友達の詳細" %>
 
 <div class="friend">
-<h2><%= @friend.full_name %>の友達の電話番号リスト</h2>
+<h2><%= @friend.full_name %></h2>
 </div>
 <% if @telephones.present? %>
   <ul class="list">
@@ -23,7 +29,7 @@
         </span>
 
         <div class="right">
-          <%= button_to "削除", telephone_path(tel.id, friend: @friend_id), { method: :delete, class: "hoge", data: { confirm: "本当に削除しますか?" } } %>
+          <%= button_to "削除", [@friend,tel], { method: :delete, class: "hoge", data: { confirm: "本当に削除しますか?" } } %>
         </div>
       </li>
     <% end %>
@@ -31,14 +37,12 @@
   <p>電話番号データがありません。</p>
 <% end %>
 <div class="chkbox">
-  <%= form_for @telephone do |form| %>
+  <%= form_for [@friend,@telephone]  do |form| %>
     <!--      <li><%#= form.label :number, "電話番号" %></li>-->
     <li class="list-item">
       <div class="left">
       <%= form.text_field :number,:placeholder => "電話番号" %>
-
       <%= form.check_box :cellphone, {}, "true", "false" %>
-
       <%= hidden_field_tag :author, @friend_id %>
       </div>
       <div class="right">

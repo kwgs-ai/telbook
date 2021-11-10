@@ -10,8 +10,8 @@
 <%= form_for @friend do |form| %>
   <div class ="new">
   <div class="name-field">
-    <%= form.label :full_name, "氏名" %>
-    <%= form.text_field :full_name,:placeholder => "山田　太郎"%>
+
+    <%= form.text_field :full_name,:placeholder => "名前"%>
   </div>
   <div class="new-save"> <%= form.submit :保存,{class: "hoge"} %></div>
   </div>

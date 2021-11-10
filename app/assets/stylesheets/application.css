@@ -16,11 +16,12 @@
 
 /* ページ全体 */
 body {
-
-    counter-reset:list;
+    font-family:serif;
+    counter-reset: list;
     font-size: large;
-  background-color: #fceddc;
-  margin: 0; padding: 0;
+    background-color: #fceddc;
+    margin: 0;
+    padding: 0;
     /*background-image: url("PKbokeIMGP04951674_TP_V.jpg");*/
     background-repeat: repeat;
     background-size: cover;
@@ -28,80 +29,92 @@ body {
 }
 
 /* リンク */
-a:link { color: #00c; }
-a:visited { color: #00c; }
-a:hover { color: #f00; }
-a img { border: none; }
+a:link {
+    color: #00c;
+}
+
+a:visited {
+    color: #00c;
+}
+
+a:hover {
+    color: #f00;
+}
+
+a img {
+    border: none;
+}
 
 /* ブロック要素 */
 p, h1, h2, h3, table, ul {
-  margin: 0 0 1em;
+    margin: 0 0 1em;
 }
 
 
 /* 全体の枠 */
 div#container {
-  margin: 0 auto;
-  padding-top: 5px;
-  width: 780px;
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 780px;
 }
 
 /* 左の枠（コンテンツを入れる） */
 main {
-  float: left;
-  width: 530px;
-  padding: 10px 10px 10px 0;
+    float: left;
+    width: 530px;
+    padding: 10px 10px 10px 0;
 }
 
 /* 右の枠（サイドバーを入れる） */
 aside#sidebar {
-  float: left;
-  width: 230px;
+    background-color: #fae3ca;
+    float: left;
+    width: 230px;
     height: 1000px;
-  padding: 5px;
-  font-size: 86%;
+    padding: 5px;
+    font-size: 86%;
 }
 
 /* ヘッダー */
 header {
     color: white;
     font-family: 'Caveat', cursive;
-  border-bottom: 5px solid #171111;
-  padding-top: 4px;
+    border-bottom: 5px solid #171111;
+    padding-top: 4px;
     background-image: url("171030ell_DSC1941_TP_V4.jpg");
 }
 
 
 /* フッター */
 footer {
-  clear: both;
-  font: 11px Verdana;
-  color: #888;
-  padding: 8px 0;
-  border-top: 4px solid #6bb;
-  text-align: center;
+    clear: both;
+    font: 11px Verdana;
+    color: #888;
+    padding: 8px 0;
+    border-top: 4px solid #6bb;
+    text-align: center;
 }
 
 footer nav ul li:not(:last-child):after {
-  color: #888;
-  content: " | ";
-  margin: 0 5px;
+    color: #888;
+    content: " | ";
+    margin: 0 5px;
 }
 
 
 /* メインコンテンツ */
 main h1 {
-  color: #212123;
-  font-weight: normal;
-  font-size: 150%;
-  border-bottom: 5px solid #c288cc;
-  margin-bottom: 0.5em;
+    color: #212123;
+    font-weight: normal;
+    font-size: 150%;
+    border-bottom: 5px solid #c288cc;
+    margin-bottom: 0.5em;
 }
 
 main h2 {
-  color: #131211;
-  font-size: 130%;
-  margin-bottom: 0.5em;
+    color: #131211;
+    font-size: 130%;
+    margin-bottom: 0.5em;
 }
 
 /*.friend{*/
@@ -135,15 +148,16 @@ main h2 {
 /*}*/
 
 
-.friend{
+.friend {
     text-align: center;
-    margin:2em 0;
+    margin: 2em 0;
     position: relative;
     padding: 0.5em 1.5em;
     border-top: solid 2px #ef7d44;
     border-bottom: solid 2px #ef7d44;
 }
-.friend:before, .friend:after{
+
+.friend:before, .friend:after {
     content: '';
     position: absolute;
     top: -10px;
@@ -152,8 +166,15 @@ main h2 {
     height: calc(100% + 20px);
     background-color: #ef7d44;
 }
-.friend:before {left: 10px;}
-.friend:after {right: 10px;}
+
+.friend:before {
+    left: 10px;
+}
+
+.friend:after {
+    right: 10px;
+}
+
 .friend h2 {
     color: #f69261;
     margin: 0;
@@ -161,59 +182,60 @@ main h2 {
 
 }
 
-main h2{
+main h2 {
     color: #f69261;
-    border-bottom:solid 2px #ef552f;
+    border-bottom: solid 2px #ef552f;
 }
-
 
 
 main p {
-  font-size: 90%;
-  line-height: 1.5;
+    font-size: 90%;
+    line-height: 1.5;
 }
-
 
 
 aside#sidebar h2 {
-  color: #080;
-  font-weight: bold;
-  border-bottom: 1px dotted #080;
-  margin-bottom: 0.5em;
-  font-size: 100%;
+    color: #080;
+    font-weight: bold;
+    border-bottom: 1px dotted #080;
+    margin-bottom: 0.5em;
+    font-size: 100%;
 }
 
 
+div.area {
 
-div.area{
-
-    text-align:end;
+    text-align: end;
 }
-div.show{
-    text-align:end;
+
+div.show {
+    text-align: end;
 
 }
-.teledele{
+
+.teledele {
     width: 100px;
     box-sizing: border-box;
     border: 1px solid #68779a;
     color: white;
     background-color: #f5a46c;
-    display:inline-block
+    display: inline-block
 }
-.teledele:hover{
+
+.teledele:hover {
     color: white;
     background: #acd1f8;
 }
+
 ol {
     background-color: #fff0ea;
-    list-style-type:none;
+    list-style-type: none;
     padding: 10px;
     border: solid 1px #ef7841;
 }
 
 ol li {
-    position:relative;
+    position: relative;
     line-height: 30px;
     margin: 7px 0 7px 40px;
     padding-left: 10px;
@@ -221,7 +243,8 @@ ol li {
 
 
 }
-ol li:before{
+
+ol li:before {
     counter-increment: list;
     content: counter(list);
     position: absolute;
@@ -238,35 +261,39 @@ ol li:before{
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-ul.tel li{
+
+ul.tel li {
     list-style-type: none
 }
-.telbox{
+
+.telbox {
     justify-content: space-between;
 }
-.list-item{
+
+.list-item {
     display: flex;
     /*justify-content: space-between;*/
 }
-.right{
+
+.right {
     /*justify-content: end;*/
     margin-left: auto;
 }
 
 ul.list {
-padding: 10px;
+    padding: 10px;
 }
 
 ul.list li {
     font-size: large;
     position: relative;
-    list-style-type: none!important;/*ポチ消す*/
+    list-style-type: none !important; /*ポチ消す*/
     padding: 0.5em 1.0em 1.0em 1.0em;
     margin-bottom: 5px;
     line-height: 1.5;
     background: #fadecb;
     color: #505050;
-    border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
+    border-radius: 15px 0px 0px 15px; /*左側の角丸く*/
 }
 
 ul.list li:before {
@@ -280,7 +307,8 @@ ul.list li:before {
     margin-top: 10px;
     margin-right: 8px;
 }
-.new{
+
+.new {
     display: flex;
 
 }
@@ -293,6 +321,7 @@ input[type="submit"].sub:hover {
     cursor: pointer;
     transition: background-color 1s;
 }
+
 input[type="submit"].sub {
     width: 10%;
     font-size: 15px;
@@ -307,24 +336,29 @@ input[type="submit"].sub {
     cursor: pointer;
     transition: background-color 1s;
 }
-.conteiner{
+
+.conteiner {
     display: flex;
     justify-content: flex-end;
 }
 
-.index{
+.index {
     display: flex;
     justify-content: space-between;
 }
-.new-save{
+
+.new-save {
     padding-top: 20px;
     padding-left: 10px;
 }
-.name-field{
+
+.name-field {
     padding-top: 20px;
 }
-.hoge{
-    font-weight: bold;
+
+.hoge {
+    font-size: large;
+
     display: inline-block;
     text-decoration: none;
     text-align: center;
@@ -334,18 +368,19 @@ input[type="submit"].sub {
     width: 70px;
     box-sizing: border-box;
     border: 1px solid #68779a;
-    color: #d3ded1;
+    color: #faefe7;
     background-color: #f38e35;
-    display:inline-block
+    display: inline-block
 
 }
+
 input[type="text"] {
     width: 200px;
     height: 30px;
 }
 
 
-.hoge:hover{
+.hoge:hover {
     color: #f5702a;
     background: #f8d4c1;
 }
@@ -357,16 +392,17 @@ input[type="text"] {
 }
 
 
-
-.link{
+.link {
     display: inline-block;
     padding: 0.1em 0.3em;
     transition: all .3s;
 }
-.link:hover{
+
+.link:hover {
     color: #fff;
     background-color: #00BCD4;
 }
+
 .btn {
     padding-top: 100px;
     /*margin: 0 0 0 auto;*/
@@ -374,20 +410,21 @@ input[type="text"] {
     width: 150px;
     border-radius: 5px;
 }
-.name{
+
+.name {
 
 }
-.new_msg{
+
+.new_msg {
     padding: 10px;
     background-color: #f8eee8;
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #f3875c;/*文字色*/
-    border: solid 3px #f5956e;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    color: #f3875c; /*文字色*/
+    border: solid 3px #f5956e; /*線*/
+    border-radius: 10px; /*角の丸み*/
 }
-
 
 
 div.toolbar {
