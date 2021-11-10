@@ -45,11 +45,6 @@ class FriendsController < ApplicationController
     @friend.destroy
     redirect_to :friends, notice: "友達を削除しました。"
   end
-  def add
-    @telephone = Telephone.new()
-  end
-  def delete
 
-  end
 
 end

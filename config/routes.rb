@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root "friends#index"
   resources :friends
-  resources :telephones
+  resources :telephones, only: [:destroy, :create]
 end
