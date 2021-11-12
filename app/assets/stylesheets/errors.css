@@ -1,6 +1,7 @@
 /* エラー表示 */
 div#errors {
-  background-color: #fff5ee;
+    color: red;
+  background-color: #ffeeef;
     border: solid 3px #fca170;/*線*/
     border-radius: 10px;/*角の丸み*/
   padding: 15px;
@@ -20,6 +21,6 @@ div#errors ul {
 }
 
 div.field_with_errors {
-  background-color: #fcc;
+  background-color: #ff0000;
   padding: 2px;
 }

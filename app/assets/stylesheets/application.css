@@ -337,6 +337,7 @@ input[type="submit"].sub {
     transition: background-color 1s;
 }
 
+
 .conteiner {
     display: flex;
     justify-content: flex-end;
@@ -378,7 +379,10 @@ input[type="text"] {
     width: 200px;
     height: 30px;
 }
-
+input[type="text"] :invalid{
+    border: solid 7px red;
+    background-color: red;
+}
 
 .hoge:hover {
     color: #f5702a;
@@ -437,4 +441,20 @@ ul.toolbar li:not(:last-child):after {
     color: #888;
     content: " | ";
     margin: 0 2px;
+}
+
+.notice{
+    font-size: 20px;
+    background-color: #fff5ee;
+    border: solid 3px #fca170;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    padding: 15px;
+    margin: 0 0 1em;
+    color: #f17533;
+text-align: center;
+}
+
+div.field_with_errors {
+    background-color: #ff0000;
+    padding: 2px;
 }

@@ -5,7 +5,7 @@ ja:
       telephone: 電話番号情報
     attributes:
      friend:
-      full_name: 氏名
+      name: 氏名
      telephone:
       number: 電話番号
       cellphone: 携帯電話

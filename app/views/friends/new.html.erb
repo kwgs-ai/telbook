@@ -2,18 +2,17 @@
 
 <h2><%= @page_title %></h2>
 <%= render "shared/errors", obj: @friend%>
-<!--<div class="new_msg">-->
-<!--<h3>制約</h3>-->
-<!--<p>２０文字以内で入力</p>-->
-<!--</div>-->
+
 <div class="name">
 <%= form_for @friend do |form| %>
   <div class ="new">
   <div class="name-field">
 
-    <%= form.text_field :full_name,:placeholder => "名前"%>
+    <%= form.text_field :name,:placeholder => "名前"%>
   </div>
-  <div class="new-save"> <%= form.submit :保存,{class: "hoge"} %></div>
+  <div class="new-save">
+    <%= form.submit :保存,{class: "hoge"} %>
+  </div>
   </div>
 <% end %>
 </div>
