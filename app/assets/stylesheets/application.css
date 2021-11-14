@@ -404,15 +404,13 @@ input[type="text"] :invalid{
 
 .link:hover {
     color: #fff;
-    background-color: #00BCD4;
+    background-color: #d43c00;
 }
 
-.btn {
+.top {
     padding-top: 100px;
-    /*margin: 0 0 0 auto;*/
-    color: #fff;
-    width: 150px;
-    border-radius: 5px;
+    font-size: large;
+
 }
 
 .name {
