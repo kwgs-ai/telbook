@@ -7,8 +7,7 @@
 <%= form_for @friend do |form| %>
   <div class ="new">
   <div class="name-field">
-
-    <%= form.text_field :name,:placeholder => "名前"%>
+    <%= form.text_field :name,:placeholder => "名前",:id => "name"%>
   </div>
   <div class="new-save">
     <%= form.submit :保存,{class: "hoge"} %>
@@ -17,5 +16,5 @@
 <% end %>
 </div>
 <div class="top">
-<%= link_to "<<TOPに戻る", :root %>
+<%= link_to "<<TOPに戻る", :root,class: "link" %>
 </div>
