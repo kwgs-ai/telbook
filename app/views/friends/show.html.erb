@@ -1,7 +1,4 @@
-
-
 <% @page_title = "友達の詳細" %>
-
 <div class="friend">
   <h2><%= @friend.name %></h2>
   <% if flash[:error].present? %>
@@ -22,10 +19,9 @@
         <span class="num">
         <%= tel.number %>
           <% if tel.cellphone %>
-          <%= image_tag "cell.png", size: "20x30", alt: "telephone" %>
+          <%= image_tag "cell.png", size: "20x30", alt: "telephone" ,class: "cellphone"%>
         <% end %>
         </span>
-
         <div class="right">
           <%= button_to "削除", [@friend, tel], { method: :delete, class: "hoge", data: { confirm: "本当に削除しますか?" } } %>
         </div>
@@ -39,8 +35,9 @@
     <li class="list-item">
       <div class="left">
         <%= form.text_field :number, :placeholder => "電話番号" %>
-        <%= form.check_box :cellphone, {}, "true", "false" %>
       </div>
+        <%= form.check_box :cellphone, {class: "check"}, "true", "false" %>
+
       <div class="right">
         <%= form.submit :追加, class: "hoge" %>
       </div>
@@ -50,5 +47,5 @@
 </ul>
 <%= paginate @telephones %>
 <div>
-<%= link_to "<< TOPに戻る", :root,class: "link" %>
+  <%= link_to "<< TOPに戻る", :root, class: "link" %>
 </div>

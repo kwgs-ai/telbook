@@ -1,20 +1,48 @@
 <% @page_title = "新規作成・編集" %>
 
 <h2><%= @page_title %></h2>
-<%= render "shared/errors", obj: @friend%>
+<%= render "shared/errors", obj: @friend %>
 
 <div class="name">
-<%= form_for @friend do |form| %>
-  <div class ="new">
-  <div class="name-field">
-    <%= form.text_field :name,:placeholder => "名前",:id => "name"%>
-  </div>
-  <div class="new-save">
-    <%= form.submit :保存,{class: "hoge"} %>
-  </div>
-  </div>
-<% end %>
+  <%= form_for @friend do |form| %>
+    <div class="new">
+      <div class="name-field">
+        <%= form.text_field :name, :placeholder => "名前" %>
+      </div>
+      <div class="new-save">
+        <%= form.submit :保存, { class: "hoge", id: "commit" } %>
+      </div>
+    </div>
+  <% end %>
 </div>
 <div class="top">
-<%= link_to "<<TOPに戻る", :root,class: "link" %>
+  <%= link_to "<<TOPに戻る", :root, class: "link" %>
 </div>
+<script>
+    $("#new_friend").validate({
+        // ルール設定
+        rules: {
+            "friend[name]": {
+                required: true, // ニックネームの入力有無チェック
+                maxlength: 10,
+            },
+        },
+        // エラーメッセージの定義
+        messages: {
+            "friend[name]": {
+                required: "氏名を入力してください",
+                maxlength: "10文字以内で入力してください"
+            },
+        },
+        errorClass: "invalid", // バリデーションNGの場合に追加するクラス名の指定
+        errorElement: "p", // エラーメッセージの要素種類の指定
+        validClass: "valid", // バリデーションOKの場合に追加するクラス名の指定
+    }).cancelSubmit = true;
+
+    // 入力欄をフォーカスアウトしたときにバリデーションを実行
+    $("#friend_name").blur(function () {
+        $("#new_friend").valid()
+
+    });
+
+</script>
