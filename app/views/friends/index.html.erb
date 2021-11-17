@@ -2,7 +2,7 @@
 
 <h2>友達一覧</h2>
 
-  <div class="toolbar"><%= link_to "友達の新規登録", :new_friend,class: "link" %></div>
+  <div class="toolbar"><%= link_to "友達の新規登録", :new_friend,class: "link",id: "shinki" %></div>
   <% if @friends.present? %>
 
       <tbody>
@@ -11,7 +11,7 @@
         <ol>
           <li>
             <div class="index">
-            <div>
+            <div class="full_name">
             <%= link_to friend.name, friend %>
             </div>
             <div class="conteiner">
@@ -22,9 +22,8 @@
           </li>
         </ol>
       <% end %>
-
       </tbody>
-<!--    </table>-->
+
     <%= paginate @friends %>
   <% else %>
     <p>友達データがありません。</p>

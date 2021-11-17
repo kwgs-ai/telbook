@@ -4,7 +4,7 @@
 <%= render "shared/errors", obj: @friend %>
 
 <div class="name">
-  <%= form_for @friend do |form| %>
+  <%= form_for @friend, html: { id: "new_friend" } do |form| %>
     <div class="new">
       <div class="name-field">
         <%= form.text_field :name, :placeholder => "名前" %>
@@ -40,6 +40,10 @@
     }).cancelSubmit = true;
 
     // 入力欄をフォーカスアウトしたときにバリデーションを実行
+    $("#friend_name").keyup(function () {
+        $("#new_friend").valid()
+
+    });
     $("#friend_name").blur(function () {
         $("#new_friend").valid()
 

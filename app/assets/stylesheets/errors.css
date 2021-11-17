@@ -20,7 +20,13 @@ div#errors ul {
   padding-left: 1.5em;
 }
 
-div.field_with_errors {
-  background-color: #ff0000;
+div.field_with_errors input{
+    background-color: #f8c9c9;
   padding: 2px;
+}
+#friend_name.invalid {
+   border: #ea352d 5px solid;
+ }
+#friend_name.valid {
+    border: seagreen 3px solid;
 }

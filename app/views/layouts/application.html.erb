@@ -14,12 +14,12 @@
 </head>
 
 <body>
-<div id="container">
+
   <header>
     <%= render "shared/header" %>
   </header>
+  <div id="container">
   <main>
-
     <% if flash.notice %>
       <div class="notice">
       <p><%= flash.notice %></p>
@@ -31,9 +31,10 @@
   <aside id="sidebar">
     <%= render "shared/sidebar" %>
   </aside>
+
+</div>
   <footer>
     <%= render "shared/footer" %>
   </footer>
-</div>
 </body>
 </html>

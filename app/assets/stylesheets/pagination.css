@@ -1,8 +1,13 @@
 /*ページネーション自体のデザイン*/
+.pagination{
+   padding-left: 20px;
+}
 .pagination>li>a {
+    margin-top: 20px;
     border: none;     /*枠線をなくす*/
     color: #ec875f;   /*文字の色を変える*/
     background-color: #ffe9e0;
+
 }
 
 /* 表示しているページ番号のデザイン */
